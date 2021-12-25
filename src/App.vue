@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-table-plus border :data="data">
+    <el-table-plus border :data="data" storeKey="table_1">
       <el-table-column min-width="100" fixed prop="id" label="id"></el-table-column>
       <el-table-column min-width="200" prop="name" label="姓名"></el-table-column>
       <el-table-column min-width="200" prop="vipLevel" label="会员等级">

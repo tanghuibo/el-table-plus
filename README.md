@@ -4,10 +4,10 @@ element-ui table 组件 增强版
 
 ## 使用
 
-引入 `el-table-plus` 替换 `el-table`
+引入 `el-table-plus` 替换 `el-table`, 并设置 `storeKey`; storeKey 用作存储表格信息的唯一标识, 不同的表格需要有不同的 storeKey。
 
 ```html
-<el-table-plus :data="data">
+<el-table-plus :data="data" storeKey="table_1">
   <el-table-column prop="id" label="id"></el-table-column>
   <el-table-column prop="name" label="名称"></el-table-column>
   <el-table-column prop="code" label="编码"></el-table-column>
