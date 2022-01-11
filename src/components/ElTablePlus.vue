@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative;">
     <TableSetting :dataSource="storeKey" :wholeList="wholeHeadList" v-if="wholeHeadListInit" @change="changeHeadList" style="position: absolute;top: 0px;z-index: 999;right: 10px;"></TableSetting>
-    <el-table v-on="$listeners" v-bind="$attrs">
+    <el-table ref="table" v-on="$listeners" v-bind="$attrs">
       <ElTableWarpper ref="tableWarpper" @output="changeWholeHeadList">
         <slot />
       </ElTableWarpper>
