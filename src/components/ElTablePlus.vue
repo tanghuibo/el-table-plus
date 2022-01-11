@@ -10,6 +10,18 @@
 </template>
 
 <script>
+
+let proxyMethods = (refName, names) => {
+  let result = {};
+  for (let name of names) {
+    result[name] = (...params) => {
+      return vueThis.$refs[refName][name](...params);
+    };
+  }
+
+  return result;
+};
+
 import TableSetting from "./TableSetting";
 import ElTableWarpper from "./ElTableWarpper";
 export default {
@@ -31,6 +43,20 @@ export default {
     };
   },
   methods: {
+    ...proxyMethods(
+      "table",
+      [
+        "clearSelection",
+        "toggleRowSelection",
+        "toggleAllSelection",
+        "toggleRowExpansion",
+        "setCurrentRow",
+        "clearSort",
+        "clearFilter",
+        "doLayout",
+        "sort",
+      ]
+    ),
     changeHeadList(headList) {
       this.$refs.tableWarpper.setHeadList(headList);
     },
